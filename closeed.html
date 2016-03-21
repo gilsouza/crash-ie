@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+  <head>
+    <title>CRASH-IE</title>
+    <style type="text/css">
+      html, body {
+      overflow: hidden;
+      scrollbar-base-color: #330066;
+      } 
+
+      .crash {
+      position:absolute;
+      left:200px;
+      top:200px;
+      width:200px;
+      }
+    </style>
+
+    <script type="text/javascript">
+    function galgenfrist() {
+        window.setTimeout('crashIE();',1000);
+    }
+
+    function crashIE() {
+        var moveNode = document.getElementById("move");
+        if(moveNode) {
+            moveNode.style.top = "100px";
+            moveNode.style.left = "200px";
+        }
+    }
+    </script>
+</head> 
+
+<body onload="galgenfrist();">
+
+    <h1>CRASH-IE</h1>
+    <div id="move" class="crash">
+    <table>
+        <tbody>
+        <tr>
+        <td>
+              <textarea></textarea>
+        </td>
+        </tr>
+        </tbody>
+    </table>
+    </div> 
+
+</body> 
+
+</html>

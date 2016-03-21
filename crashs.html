@@ -1,0 +1,23 @@
+<div id="panel"></div>
+<a href="#" onclick="loadScript(); return false;">Load script</a>
+
+<script>
+    var n = 0;
+    var callback = function() {
+        n++;
+        var panel = document.getElementById("panel");
+        panel.innerHTML = "loadScript called " + n + " times.";
+        var node = document.getElementById("testid");
+        node.parentNode.removeChild(node);
+    }
+
+    var loadScript = function() {
+        var node = document.createElement("script");
+        node.src="crash.js";
+        node.id = "testid";
+
+        document.getElementsByTagName("head")[0].appendChild(node);
+    }
+
+    window.onload = loadScript;
+</script>
